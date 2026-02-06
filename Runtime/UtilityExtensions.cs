@@ -65,8 +65,8 @@ namespace UnityEssentials
             if (string.IsNullOrEmpty(input))
                 return string.Empty;
 
-            // Remove underscores and dots
-            string result = input.Replace("_", "").Replace(".", "");
+            // Replace underscores with space
+            string result = input.Replace("_", " ");
             // Insert spaces before capital letters (camel case)
             result = System.Text.RegularExpressions.Regex.Replace(result, "(?<!^)([A-Z])", " $1");
             // Capitalize each word
