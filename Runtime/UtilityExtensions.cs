@@ -9,6 +9,9 @@ namespace UnityEssentials
         private static readonly ConditionalWeakTable<Camera, HDAdditionalCameraData> _cameraDataCache = new();
         public static void SetDynamicResolution(this Camera camera, bool allow)
         {
+            if (camera == null)
+                return;
+            
             if (!_cameraDataCache.TryGetValue(camera, out var cameraData))
             {
                 cameraData = camera.GetComponent<HDAdditionalCameraData>();
@@ -30,9 +33,7 @@ namespace UnityEssentials
         public static void DestroyAllChildren(this Transform transform)
         {
             while (transform.childCount > 0)
-                if (Application.isEditor)
-                    Object.DestroyImmediate(transform.GetChild(0).gameObject);
-                else Object.Destroy(transform.GetChild(0).gameObject);
+                Destroy(transform.GetChild(0).gameObject);
         }
 
         public static void DestroyAllChildren<T>(this Transform transform) where T : Component
