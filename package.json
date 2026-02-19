@@ -1,12 +1,12 @@
 {
   "name": "com.unityessentials.systems.utilityextensions",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "displayName": "Systems UtilityExtensions",
   "description": "This is a part of the UnityEssentials Ecosystem",
   "unity": "6000.0",
   "unityRelease": "",
   "dependencies": {
-    "com.unity.render-pipelines.high-definition": "17.4.0"
+    "com.unity.render-pipelines.high-definition": "~17.4.0"
   },
   "keywords": [],
   "author": {
